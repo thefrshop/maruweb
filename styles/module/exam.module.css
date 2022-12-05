@@ -1,0 +1,43 @@
+.problemBox {
+    background: #fff;
+}
+
+.probTitle {
+    color: #444;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.ResultTitle {
+    color: #444;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.ansset {
+    display: flex;
+    flex-direction: column;
+}
+
+.ResultCircle {
+    margin: 50px auto 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 6px solid #2a477c;
+    border-radius: 100px;
+}
+
+.ResultBox {
+    margin: 80px;
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.ResultText {
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+}

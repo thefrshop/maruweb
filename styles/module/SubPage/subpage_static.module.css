@@ -1,0 +1,51 @@
+.Contents {
+    padding-top: 50px;
+    margin: 0 auto;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+}
+
+.SubNaviContain {
+    width: 15vw;
+    max-width: 200px;
+    padding: 10px 0 10px 0;
+}
+
+.SubNaviContain .Title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+    border-bottom: 2px solid #2d478b;
+}
+
+.SubNaviContain .SubTitle {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.Top {
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #999;
+}
+
+.Top .Left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Top .Right {
+}
+
+.Top .Right .Icon {
+    margin: 0 5px 0 5px;
+}

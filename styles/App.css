@@ -1,0 +1,213 @@
+.App {
+	font-family: S-CoreDream-3, 나눔고딕, NanumGothic, Helvetica Neue, Helvetica, AppleSDGothicNeo-Regular, Arial, 맑은고딕,
+		malgun gothic, 돋움, dotum, sans-serif;
+	position: relative;
+	color: #3a3a3a;
+}
+
+.BackgroundGray {
+	background-color: #eee;
+}
+.BackgroundWhite {
+	background-color: #fff;
+}
+
+.Row {
+	display: flex;
+}
+
+.RowWrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.Column {
+	display: flex;
+	flex-direction: column;
+}
+
+.Center {
+	justify-content: center;
+	align-items: center;
+}
+
+.PaddingContain {
+	padding: 30px;
+}
+
+.MarginContain {
+	margin: 30px;
+}
+
+.MarginTopContain {
+	margin: 30px 0 0 0;
+}
+
+.NoDataContain {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding: 100px 0 0 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.OneButtonContain {
+	display: flex;
+	justify-content: flex-end;
+	margin: 15px 0 0 0;
+}
+
+.TwoButtonContain {
+	display: flex;
+	justify-content: space-between;
+	margin: 15px 0 0 0;
+}
+
+.BorderBtn {
+	border: 1px solid #316db1;
+	background-color: #fff;
+	border-radius: 2px;
+	color: #316db1;
+	min-width: 100px;
+	margin: 7px;
+}
+
+.BorderBtn:hover {
+	background: #1179b9;
+}
+
+.BorderRejectBtn {
+	border: 1px solid #e64345;
+	background-color: #fff;
+	border-radius: 2px;
+	color: #e64345;
+	min-width: 100px;
+	margin: 7px;
+}
+
+.BorderRejectBtn:hover {
+	background: #e64345;
+}
+
+.FullBtn {
+	background: #316db1;
+	border-radius: 2px;
+	color: #ffffff;
+	min-width: 100px;
+	margin: 7px;
+	border: 1px solid #316db1;
+}
+
+.FullBtn:hover {
+	background: #1179b9;
+	border: 1px solid #1179b9;
+}
+
+.ToggleButton {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 13px;
+}
+
+.ToggleButton .Click {
+	background-color: #2d478b;
+	cursor: pointer;
+	padding: 5px;
+	color: #fff;
+	width: 120px;
+}
+
+.ToggleButton .NotClick {
+	border: 1px solid #2d478b;
+	cursor: pointer;
+	padding: 5px;
+	color: #2d478b;
+	width: 120px;
+}
+
+.ToggleButton .Icon {
+	margin-right: 5px;
+}
+
+.Calendar {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+}
+
+.Calendar .Title {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 15px 0 15px;
+}
+
+.Calendar .Icon {
+	padding: 20px 10px 20px 10px;
+	cursor: pointer;
+}
+
+.ModeButton {
+	z-index: 6;
+	position: absolute;
+	bottom: 5%;
+	right: 60px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #999;
+	border-radius: 50px;
+	background-color: #fff;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #999;
+	font-size: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.WhiteBorder {
+	width: 1px;
+	background-color: #fff;
+}
+
+.WhiteBorder2 {
+	height: 1px;
+	background-color: #fff;
+}
+
+.GrayBorder {
+	width: 1px;
+	background-color: #dbdbdb;
+}
+
+.GrayBorder2 {
+	height: 1px;
+	background-color: #dbdbdb;
+}
+
+.ControlBtn {
+	margin-right: 5px;
+	min-width: 70px;
+	border-radius: 0 !important;
+	height: 30px !important;
+	padding: 4px 15px !important;
+	background: #fff;
+	border: 1px solid #dbdde2 !important;
+	color: #666;
+	font-size: 12px !important;
+	cursor: pointer !important;
+}
+
+.ControlBtn:disabled {
+	background: #eee;
+	border: 1px solid #dbdde2 !important;
+	color: #666;
+}

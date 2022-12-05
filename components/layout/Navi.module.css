@@ -1,0 +1,70 @@
+#Contain {
+    position: absolute;
+    z-index: 6;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*background-color: #333333e0;*/
+}
+
+.Contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 15px 30px;
+}
+.Title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+.Txt {
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: 'S-CoreDream-5';
+    color: inherit;
+    /* text-shadow: #999 1px 0 10px;*/
+}
+
+.HamburgerButton {
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.Hamburger {
+    overflow: visible;
+    cursor: pointer;
+    width: 30px;
+    z-index: 8;
+}
+
+#Contain .Top {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px 10px 20px;
+    flex-wrap: wrap;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: inherit;
+}
+
+#Contain .Top .Login {
+    font-size: 13px;
+    cursor: pointer;
+    color: inherit;
+}
+
+#Contain .Top .SignUp {
+    font-size: 13px;
+    cursor: pointer;
+    color: inherit;
+}

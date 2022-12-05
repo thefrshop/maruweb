@@ -1,0 +1,56 @@
+.Header {
+    display: flex;
+
+    padding: 15px 0 15px 0;
+}
+
+.Header .Left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.Header .Center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header .Right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Header .TitleContain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ScroleCover {
+    background-color: #333333ab;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+    width: 100%;
+    justify-content: center;
+}

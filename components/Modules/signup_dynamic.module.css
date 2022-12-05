@@ -1,0 +1,82 @@
+#Contain_PC {
+    /* PC */
+}
+
+#Contain_PC .LogoContain {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Contain_PC .SubContainer {
+    width: 800px;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#Contain_PC .SignForm {
+    padding: 0 50px;
+    width: 100%;
+}
+
+#Contain_Tablet {
+    /* Tablet */
+}
+
+#Contain_Tablet .LogoContain {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Contain_Tablet .SubContainer {
+    width: calc(100% - 30px);
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#Contain_Tablet .SignForm {
+    padding: 0 15px;
+    width: 100%;
+}
+
+#Contain_Mobile {
+    /* Mobile */
+}
+
+#Contain_Mobile .LogoContain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#Contain_Mobile .SubContainer {
+    width: calc(100% - 30px);
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+#Contain_Mobile .SignForm {
+    padding: 0 15px;
+    width: 100%;
+}
+
+#Contain_Mobile .step2_Contain {
+    height: 100vw;
+    overflow-y: scroll;
+}

@@ -1,92 +1,72 @@
-import { useEffect, useState } from "react";
+import React from 'react';
+import { CookiesProvider } from 'react-cookie';
+import Head from 'next/head';
+import Router from 'next/router';
+import Script from 'next/script';
+import NProgress from 'nprogress';
+import wrapper from '../redux/configureStore';
 
-import Router from "next/router";
-import App from "next/app"
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import '../styles/globals.css';
+import 'video-react/dist/video-react.css';
+//import 'tfsm-formset/dist/index.css';
+//import 'react-image-gallery/styles/css/image-gallery.css';
+import '../styles/App.css';
+import 'antd/dist/reset.css';
 
-import { getMainMenu } from "@/lib/api"
+import withNavi from '../components/layout/withNavi';
+import withData from '../components/layout/withData';
+import withContents from '../components/layout/withContents';
 
-import FooterSection from "@/components/footer-section";
-import HeaderSection from "@/components/header-section";
-import ScrollToButtonButton from "@/components/scroll-to-top-button";
-import Preloader from "@/components/preloader";
-
-import 'bootstrap/dist/css/bootstrap.css'
-import '@/css/lineicons.css'
-
-import '@/css/tiny-slider.min.css'
-import '@/css/main.css'
-
-function MyApp({ Component, pageProps, mainMenu }) {
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter()
-  const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY
-
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.js");
-
-    const showLoader = () => {
-      setIsLoading(true);
-    };
-
-    const removeLoader = () => {
-      setIsLoading(false);
-    };
-
-    Router.events.on("routeChangeStart", showLoader);
-    Router.events.on("routeChangeComplete", removeLoader);
-    Router.events.on("routeChangeError", removeLoader);
-
-    return () => {
-      Router.events.off("routeChangeStart", showLoader);
-      Router.events.off("routeChangeComplete", removeLoader);
-      Router.events.off("routeChangeError", removeLoader);
-    };
-  }, [authToken, router]);
-
-
-  const pageLayout = authToken ? (
-    <>
-      <HeaderSection mainMenu={mainMenu} />
-      <Component {...pageProps} />
-      <FooterSection mainMenu={mainMenu} />
-      <ScrollToButtonButton />
-    </>
-  ) : <Component {...pageProps} />
-
-  return <>
-    <Head>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <title>Sample Landing Page with Components - powered by ButterCMS</title>
-      <meta name="description" content="Sample Landing Page with Components - powered by ButterCMS" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="shortcut icon" type="image/x-icon" href="https://buttercms.com/static/v2/images/favicon.png" />
-    </Head>
-
-    {isLoading && <Preloader></Preloader>}
-
-    {!isLoading && pageLayout}
-  </>
-
-}
-
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  const authToken = process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY
-  let mainMenu = []
-
-  if (authToken) {
-    try {
-      mainMenu = await getMainMenu()
-    }
-    catch (e) {
-      console.error("Couldn't load main menu links.", e)
-    }
-  }
-
-  return { ...appProps, mainMenu };
+// 라우터 이동 시 로딩 설정
+Router.onRouteChangeStart = (url) => {
+	NProgress.start();
 };
 
-export default MyApp
+// 라우터 이동 완료 시 로딩 설정
+Router.onRouteChangeComplete = () => NProgress.done();
+
+// 라우터 에러 발생 시 로딩 설정
+Router.onRouteChangeError = () => NProgress.done();
+
+function App({ Component, pageProps }) {
+	const WithContents = withContents(Component);
+	const WithNaviComponent = withNavi(WithContents);
+	const WithDataComponent = withData(WithNaviComponent);
+
+	return (
+		<div>
+			<Head>
+				<title>마루 미디어</title>
+				<meta charSet="utf-8" />
+				<link rel="icon" href="/favicon.ico" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="theme-color" content="#000000" />
+				<link rel="apple-touch-icon" href="favicon-180.png" />
+				<link rel="canonical" href="http://marumedia.co.kr" />
+				<meta property="og:title" content="마루 미디어" />
+				<meta property="og:description" content="마루 미디어" />
+				<meta property="og:image" content="kakaoicon1.png" />
+				<meta property="og:image:width" content="800" />
+				<meta property="og:image:height" content="400" />
+				<meta property="og:url" content="http://marumedia.co.kr" />
+				<meta property="og:site_name" content="마루 미디어" />
+				<meta property="og:type" content="website" />
+				<meta name="description" content="마루 미디어" />
+				<link
+					rel="stylesheet"
+					href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+					integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+					crossOrigin="anonymous"
+				/>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+			</Head>
+
+			<WithDataComponent {...pageProps} />
+		</div>
+	);
+}
+
+export default wrapper.withRedux(App);
+// 아이디 비밀번호 찾기 구현 방법
+// 체크 박스 로그인 유지
+// form을 사용하는 이유

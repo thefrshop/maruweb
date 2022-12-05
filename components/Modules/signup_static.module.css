@@ -1,0 +1,217 @@
+.LogoContain {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignUp {
+    /* background-image: url('../../../public/mainBanner.jpeg'); */
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.SignUpBackGround {
+    background-color: #333333e0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignForm {
+    padding: 0 50px;
+}
+
+.SignupTitle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.PolicyTitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    color: #316db1;
+}
+
+.PolicyBox {
+    max-width: 800px;
+    margin: 5px auto;
+    background: #fff;
+    font-size: 13px;
+}
+
+.PolicyBox .ScrollableBox {
+    max-height: 200px;
+    overflow: auto;
+    text-align: left;
+    padding: 15px;
+    border: 2px solid #316db1;
+}
+
+.PolicyCheck {
+    text-align: right;
+}
+
+.SignupBtn {
+    background: #316db1;
+    border-radius: 2px;
+    color: #ffffff;
+    min-width: 100px;
+}
+
+.SignupBtn:hover {
+    background: #1179b9;
+}
+
+.btn-Signupinner {
+    background: #316db1;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 0 5px;
+    line-height: 30px;
+    height: 30px;
+    min-width: 40px;
+    margin: 4px;
+}
+
+.btn-Signupinner:hover {
+    background: #1179b9;
+}
+
+.step1Title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #316db1;
+    margin-bottom: 20px;
+}
+
+.Step1 {
+    margin: 30px;
+}
+
+.Step1 .table {
+    border-top: 2px solid #316db1;
+    border-bottom: 2px solid #316db1;
+    border-left: 0;
+    border-right: 0;
+}
+.Step1 .table th {
+    padding: 25px 20px;
+    font-size: 16px;
+    text-align: left;
+    width: 180px;
+    border-left: 0px;
+    font-weight: bold;
+    color: #316db1;
+}
+.Step1 .table th span {
+    color: #b91e1e;
+}
+
+.Step1 .table td {
+    padding: 20px 30px;
+    font-size: 14px;
+    border-right: 0px;
+}
+.tdSection {
+    display: flex;
+    flex-direction: row;
+}
+.IsEnable {
+    text-align: left;
+    padding: 10px 10px;
+    font-size: 12px;
+    width: 300px;
+}
+.IsEnable div div {
+    display: none !important;
+    margin: 0 !important;
+    line-height: 0;
+    height: 0px;
+}
+.IsEnable div p {
+    text-align: left !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+}
+
+.step2Title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--main-text);
+    margin-bottom: 20px;
+    font-family: 'Noto Sans KR' !important;
+}
+
+.Step2 .form-control {
+    width: 70%;
+}
+
+.Step2 {
+    margin: 30px;
+}
+
+.Step2 .table {
+    border-top: 2px solid #316db1;
+    border-bottom: 2px solid #316db1;
+    border-left: 0;
+    border-right: 0;
+}
+.Step2 .table th {
+    padding: 0 30px;
+    line-height: 60px;
+    font-size: 16px;
+    text-align: left;
+    width: 180px;
+    border-left: 0px;
+    font-weight: bold;
+    color: #316db1;
+}
+.Step2 .table th span {
+    color: #b91e1e;
+}
+
+.Step2 .table td {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-right: 0px;
+}
+
+.OneButtonContain {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.TwoButtonContain {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+}
+
+.Row {
+    display: flex;
+}
+
+.MarginLeftButton {
+    margin: 0 0 0 15px;
+}
+
+.FullWdithCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

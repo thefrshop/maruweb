@@ -1,0 +1,71 @@
+#Contain_PC {
+	/* PC */
+}
+
+#Contain_PC .submenuTitle {
+	font-family: 'S-CoreDream-4';
+	text-align: center;
+	font-size: 17px;
+	min-width: 150px;
+	display: block;
+	padding: 10px;
+	line-height: inherit;
+	cursor: pointer;
+}
+
+#Contain_PC .submenuTitle:hover {
+	text-shadow: #999 0.5px 0.5px 0;
+}
+
+#Contain_PC .btn_menu {
+	border-radius: 0;
+	margin: 1px;
+	padding: 5px;
+	font-size: 14px;
+	width: 156px;
+	height: 35px;
+	color: #000;
+}
+
+#Contain_PC .btn_menu:hover {
+	color: #fff;
+	background: #ababab;
+}
+
+#Contain_Tablet {
+	/* Tablet */
+}
+
+#Contain_Tablet .submenuTitle {
+	font-family: 'S-CoreDream-4';
+	text-align: center;
+	font-size: 1.2vw;
+	min-width: 1.5vw;
+	display: block;
+	padding: 10px;
+	line-height: inherit;
+	cursor: pointer;
+}
+
+#Contain_Tablet .submenuTitle:hover {
+	text-shadow: #999 0.5px 0.5px 0;
+}
+
+#Contain_Tablet .btn_menu {
+	border-radius: 0;
+	margin: 1px;
+	padding: 5px;
+	font-size: 1vw;
+	width: 156px;
+	height: 35px;
+	color: #000;
+}
+
+#Contain_Tablet .btn_menu:hover {
+	color: #fff;
+	background: #ababab;
+}
+
+#Contain_Mobile {
+	/* Mobile */
+}

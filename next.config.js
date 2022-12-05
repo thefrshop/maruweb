@@ -1,34 +1,24 @@
-module.exports = {
-  reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: "/landing-page/landing-page-with-components",
-      }
-    ];
-  },
-  redirects() {
-    const sourcesRequiringAuthToken = [
-      "/", "/landing-page/:slug*", "/blog/:path*"
-    ]
-
-    return process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY ? [
-      {
-        source: "/missing-token",
-        destination: "/",
-        permanent: false
-      }
-    ] : sourcesRequiringAuthToken.map(source => ({
-      source: source,
-      destination: "/missing-token",
-      permanent: false
-    })
-    )
-  },
-  images: {
-    domains: ["cdn.buttercms.com"],
-    dangerouslyAllowSVG: true,
-  },
+const nextConfig = {
+    async rewrites() {
+        return [
+            {
+                source: "/web/:path*",
+                destination: "http://localhost:4000/web/:path*", // Proxy to Backend
+            },
+            {
+                source: "/web/images/:path*",
+                destination: "http://localhost:4000/images/:path*", // Proxy to Backend
+            },
+            {
+                source: "/images/:path*",
+                destination: "http://localhost:4000/images/:path*", // Proxy to Backend
+            },
+            {
+                source: "/files/:path*",
+                destination: "http://localhost:4000/files/:path*", // Proxy to Backend
+            },
+        ];
+    },
 };
 
+module.exports = nextConfig;
