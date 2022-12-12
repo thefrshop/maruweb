@@ -1,24 +1,27 @@
-const nextConfig = {
-    async rewrites() {
-        return [
-            {
-                source: "/web/:path*",
-                destination: "http://localhost:4000/web/:path*", // Proxy to Backend
-            },
-            {
-                source: "/web/images/:path*",
-                destination: "http://localhost:4000/images/:path*", // Proxy to Backend
-            },
-            {
-                source: "/images/:path*",
-                destination: "http://localhost:4000/images/:path*", // Proxy to Backend
-            },
-            {
-                source: "/files/:path*",
-                destination: "http://localhost:4000/files/:path*", // Proxy to Backend
-            },
-        ];
-    },
-};
+const { withNativebase } = require("@native-base/next-adapter");
+const path = require("path");
 
-module.exports = nextConfig;
+module.exports = withNativebase({
+    dependencies: ["@native-base/icons", "react-native-web-linear-gradient"],
+    nextConfig: {
+        webpack: (config, options) => {
+            config.module.rules.push({
+                test: /\.ttf$/,
+                loader: "url-loader", // or directly file-loader
+                include: path.resolve(__dirname, "node_modules/@native-base/icons"),
+            });
+            config.resolve.alias = {
+                ...(config.resolve.alias || {}),
+                "react-native$": "react-native-web",
+                "react-native-linear-gradient": "react-native-web-linear-gradient",
+            };
+            config.resolve.extensions = [".web.js", ".web.ts", ".web.tsx", ...config.resolve.extensions];
+            return config;
+        },
+        images: {
+            loader: "akamai",
+            path: "/",
+            domains: ["https://b.zmtcdn.com/web_assets", "upload.wikimedia.org/"],
+        },
+    },
+});
